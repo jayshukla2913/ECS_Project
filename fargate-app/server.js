@@ -17,7 +17,7 @@ db.connect((err) => {
 });
 
 app.get('/', (req, res) => {
-    res.send('App running on ECS Fargate with RDS!');
+    res.send('App running on ECS Fargate with RDS using CI/CD process!');
 });
 
 app.listen(3000, () => {
