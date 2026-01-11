@@ -21,6 +21,7 @@ phases:
     commands:
       - echo "Pushing Docker image to ECR"
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fargate-app:latest
+      - printf '[{"name":"fargate-app","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fargate-app:latest > ../ecsapp.json
 artifacts:
   files:
-    - "**/*"
+    - ecsapp.json
