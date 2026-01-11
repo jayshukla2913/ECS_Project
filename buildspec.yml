@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
+      - npm config set cache /tmp/npm-cache --global
       - npm install
   pre_build:
     commands:
